@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOTPDataViewerApp", "OOTPDataViewerApp\OOTPDataViewerApp.csproj", "{57BAD973-F6B6-4AEF-AC1A-B3349E5CACEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOTPDataViewerDataSource", "OOTPDataViewerDataSource\OOTPDataViewerDataSource.csproj", "{8E8DC374-FA21-435C-94A9-EC28C30B01FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57BAD973-F6B6-4AEF-AC1A-B3349E5CACEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57BAD973-F6B6-4AEF-AC1A-B3349E5CACEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57BAD973-F6B6-4AEF-AC1A-B3349E5CACEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57BAD973-F6B6-4AEF-AC1A-B3349E5CACEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E8DC374-FA21-435C-94A9-EC28C30B01FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E8DC374-FA21-435C-94A9-EC28C30B01FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E8DC374-FA21-435C-94A9-EC28C30B01FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E8DC374-FA21-435C-94A9-EC28C30B01FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {859B52EE-46A6-4F07-AF85-13595A1F307A}
+	EndGlobalSection
+EndGlobal
