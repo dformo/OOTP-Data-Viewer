@@ -18,16 +18,6 @@ namespace OOTPDataViewerApp.views
             AvaloniaXamlLoader.Load(this);
         }
 
-        public GameData? GameDataSource { get; set; }
-
-        public void LoadView()
-        {
-            if (GameDataSource != null)
-            {
-                this.FindControl<TextBlock>("lblResult").Text = GameDataSource.GetGameLocation();
-            }
-        }
-
         private void BackButtonClick(object sender, RoutedEventArgs e)
         {
             if (this.Parent == null) { return; }

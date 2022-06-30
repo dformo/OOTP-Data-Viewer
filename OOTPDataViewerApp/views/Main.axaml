@@ -7,7 +7,7 @@
   <StackPanel>
     <Button Width="75" Height="32"
             Content="Back"
-            Click="BackButtonClick" />
-    <TextBlock Name="lblResult" />
+            Click="BackButtonClick"/>
+    <TextBlock Name="lblResult" Text="{Binding GameLocation}" />
   </StackPanel>
 </UserControl>

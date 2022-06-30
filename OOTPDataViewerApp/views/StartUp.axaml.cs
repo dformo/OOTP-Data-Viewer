@@ -2,6 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using OOTPDataViewerApp.viewmodels;
 using OOTPDataViewerDataSource;
 using System;
 using System.IO;
@@ -38,9 +39,7 @@ namespace OOTPDataViewerApp.views
                 try
                 {
                     var game = new GameData(selectedFolder);
-                    var vwMain = new Main() { GameDataSource = game };
-                    vwMain.LoadView();
-                    mainWindow.Content = vwMain;
+                    mainWindow.Content = new Main() { DataContext = new MainVM(game)};
                 }
                 catch (DirectoryNotFoundException ex)
                 {
