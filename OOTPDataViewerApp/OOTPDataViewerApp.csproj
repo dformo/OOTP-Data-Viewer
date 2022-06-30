@@ -9,6 +9,12 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove=".gitignore" />
+    <None Remove="images\baseball-background.jpg" />
+    <None Remove="images\baseball-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AvaloniaResource Include="images\baseball-background.jpg" />
+    <AvaloniaResource Include="images\baseball-black.png" />
   </ItemGroup>
   <ItemGroup>
     <!--This helps with theme dll-s trimming.
@@ -29,6 +35,6 @@
     <ProjectReference Include="..\OOTPDataViewerDataSource\OOTPDataViewerDataSource.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="images\" />
+    <Resource Include="images\baseball-background.jpg" />
   </ItemGroup>
 </Project>

@@ -5,6 +5,7 @@
         xmlns:views="clr-namespace:OOTPDataViewerApp.views"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="OOTPDataViewerApp.MainWindow"
-        Title="OOTPDataViewerApp">
-  <views:StartUp Name="vwStartUp"/>
+        Icon="/images/baseball-black.png"
+        Title="Out of the Park Baseball Data Viewer">
+  <views:StartUp />
 </Window>

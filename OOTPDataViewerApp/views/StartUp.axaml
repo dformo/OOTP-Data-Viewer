@@ -4,10 +4,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="OOTPDataViewerApp.views.StartUp">
-  <StackPanel>
-    <Button Width="175" Height="32"
-            Content="Select game location:"
-            Click="FolderChooserClick" />
-    <TextBlock Name="lblError" />
-  </StackPanel>
+  <Grid>
+    <Image Source="../images/baseball-background.jpg" Stretch="UniformToFill"  />
+    
+    
+    <StackPanel VerticalAlignment="Center">
+      <Button Width="175" Height="32"
+              HorizontalAlignment="Center"
+              Content="Select game location:"
+              Click="FolderChooserClick" />
+      <TextBlock Name="lblError"
+                 Text=""
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"/>
+    </StackPanel>
+  </Grid>
 </UserControl>
