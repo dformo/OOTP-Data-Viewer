@@ -23,7 +23,7 @@
             {
                 this.gameLocation = dirInfo.FullName;
             }
-            else { throw new DirectoryNotFoundException("Unable to find the 'dump' folder."); }
+            else { throw new DirectoryNotFoundException("Unable to find the 'dump' folder"); }
         }
 
         public string GetGameLocation()
