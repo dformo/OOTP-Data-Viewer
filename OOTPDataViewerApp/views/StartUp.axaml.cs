@@ -84,9 +84,9 @@ namespace OOTPDataViewerApp.views
 
                 var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
                 if (config.AppSettings.Settings[APP_SETTING_LAST_USED_FILE] == null)
-                    config.AppSettings.Settings.Add(APP_SETTING_LAST_USED_FILE, selectedFolder);
+                    config.AppSettings.Settings.Add(APP_SETTING_LAST_USED_FILE, game.GetGameLocation());
                 else
-                    config.AppSettings.Settings[APP_SETTING_LAST_USED_FILE].Value = selectedFolder;
+                    config.AppSettings.Settings[APP_SETTING_LAST_USED_FILE].Value = game.GetGameLocation();
                 config.Save(ConfigurationSaveMode.Modified);
                 ConfigurationManager.RefreshSection("appSettings");
             }
