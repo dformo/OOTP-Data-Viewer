@@ -1,4 +1,3 @@
-using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
@@ -6,33 +5,16 @@ using Avalonia.Markup.Xaml;
 using OOTPDataViewerApp.viewmodels;
 using OOTPDataViewerDataSource;
 using System;
-using System.Configuration;
 using System.IO;
 
 namespace OOTPDataViewerApp.views
 {
     public partial class StartUp : UserControl
     {
-        private const string APP_SETTING_LAST_USED_FILE = "LastUsedFile";
-
         public StartUp()
         {
             InitializeComponent();
-
-            TextBlock lastUsedLabel = this.FindControl<TextBlock>("lblLastUsed");
-            TextBlock lastUsed = this.FindControl<TextBlock>("lblLastUsedFile");
-            
-            var settings = ConfigurationManager.AppSettings;
-            if (settings[APP_SETTING_LAST_USED_FILE] != null)
-            {
-                lastUsedLabel.Text = "Last Used:";
-                lastUsed.Text = settings[APP_SETTING_LAST_USED_FILE];
-            }
-            else
-            {
-                lastUsedLabel.IsVisible = false;
-                lastUsed.IsVisible = false;
-            }
+            this.DataContext = new StartUpVM();
         }
 
         private void InitializeComponent()
@@ -67,28 +49,23 @@ namespace OOTPDataViewerApp.views
             if (this.Parent == null) { return; }
             var mainWindow = (Window)this.Parent;
 
-            if (e.Source != null && e.Source is TextBlock)
+            if (e.Source != null && this.DataContext != null && e.Source is TextBlock)
             {
-                LoadGameFile(mainWindow, ((TextBlock)e.Source).Text);
+                LoadGameFile(mainWindow, ((StartUpVM)this.DataContext).GetGameLocation());
             }
 
             e.Handled = true;
         }
 
-        private void LoadGameFile(Window mainWindow, string selectedFolder)
+        private void LoadGameFile(Window mainWindow, string? selectedFolder)
         {
             try
             {
+                if (this.DataContext == null) { return; }
+                if (selectedFolder == null) { return; }
                 var game = new GameData(selectedFolder);
+                ((StartUpVM)this.DataContext).SetLastUsedGameFile(selectedFolder);
                 mainWindow.Content = new Main() { DataContext = new MainVM(game) };
-
-                var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                if (config.AppSettings.Settings[APP_SETTING_LAST_USED_FILE] == null)
-                    config.AppSettings.Settings.Add(APP_SETTING_LAST_USED_FILE, game.GetGameLocation());
-                else
-                    config.AppSettings.Settings[APP_SETTING_LAST_USED_FILE].Value = game.GetGameLocation();
-                config.Save(ConfigurationSaveMode.Modified);
-                ConfigurationManager.RefreshSection("appSettings");
             }
             catch (DirectoryNotFoundException ex)
             {
