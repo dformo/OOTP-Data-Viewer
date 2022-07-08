@@ -64,7 +64,7 @@ namespace OOTPDataViewerApp.views
                 if (this.DataContext == null) { return; }
                 if (selectedFolder == null) { return; }
                 var game = new GameData(selectedFolder);
-                ((StartUpVM)this.DataContext).SetLastUsedGameFile(selectedFolder);
+                ((StartUpVM)this.DataContext).SetLastUsedGameFile(game.GetGameLocation());
                 mainWindow.Content = new Main() { DataContext = new MainVM(game) };
             }
             catch (DirectoryNotFoundException ex)

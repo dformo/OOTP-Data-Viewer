@@ -9,11 +9,6 @@
     
     
     <StackPanel VerticalAlignment="Center" Margin="0,-75,0,0">
-      <TextBlock Name="lblError"
-                 Text=""
-                 Foreground="Red"
-                 HorizontalAlignment="Center"
-                 VerticalAlignment="Center"/>
       <Button Width="175" Height="32" Margin="3"
               HorizontalAlignment="Center"
               Content="Select game location:"
@@ -33,6 +28,11 @@
                     ToolTip.Tip="{Binding LastUsedFilePath}"
                     PointerPressed="LastUsedClick" />
       </StackPanel>
+      <TextBlock Name="lblError"
+                 Text=""
+                 Foreground="Red"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"/>
     </StackPanel>
   </Grid>
 </UserControl>
