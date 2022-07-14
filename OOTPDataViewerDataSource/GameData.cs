@@ -56,5 +56,10 @@
         {
             return gameLocation;
         }
+
+        public string GetDumpLocation()
+        {
+            return dumpLocation;
+        }
     }
 }

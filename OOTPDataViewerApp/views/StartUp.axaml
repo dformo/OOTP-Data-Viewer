@@ -30,7 +30,7 @@
       </StackPanel>
       <TextBlock Name="lblError"
                  Text=""
-                 Foreground="Red"
+                 Foreground="Chartreuse"
                  HorizontalAlignment="Center"
                  VerticalAlignment="Center"/>
     </StackPanel>
